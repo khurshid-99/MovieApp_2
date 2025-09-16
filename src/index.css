@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+/* bg-[#06050B] */
+
+@font-face {
+  font-family: PoppinsBoldItalic;
+  src: url("../public/fonts/Poppins-BoldItalic.ttf");
+}
+
+@font-face {
+  font-family: PoppinsExtraBoldItalic;
+  src: url("../public/fonts/Poppins-ExtraBoldItalic.ttf");
+}
+@font-face {
+  font-family: PoppinsExtraLight;
+  src: url("../public/fonts/Poppins-ExtraLight.ttf");
+}
+@font-face {
+  font-family: PoppinsRegular;
+  src: url("../public/fonts/Poppins-Regular.ttf");
+}
+
+@theme {
+  --font-PoppinsRegular: "PoppinsRegular";
+  --font-PoppinsExtraLight: "PoppinsExtraLight";
+  --font-PoppinsExtraBoldItalic: "PoppinsExtraBoldItalic";
+  --font-PoppinsBoldItalic: "PoppinsBoldItalic";
+}
