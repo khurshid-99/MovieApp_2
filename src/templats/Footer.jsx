@@ -1,4 +1,4 @@
-import img from "../../public/public/imgi_1_footer-bg.png"
+import img from "../../public/imgi_1_footer-bg.png"
 const Footer = () => {
   return (
     <div
