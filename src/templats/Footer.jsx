@@ -1,10 +1,10 @@
-
+import img from "../../public/public/imgi_1_footer-bg.png"
 const Footer = () => {
   return (
     <div
       className="w-full h-[53vh] px-10 pt-8 "
       style={{
-        background: `url(public/imgi_1_footer-bg.png)`,
+        background: `url(${img})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
