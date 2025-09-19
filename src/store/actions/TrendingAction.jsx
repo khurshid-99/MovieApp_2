@@ -61,7 +61,6 @@ export const asyncLoderMovie = (id) => async (dispatch) => {
       images: images.data,
       external_ids: external_ids.data,
       credits: credits.data,
-
       changes: changes.data,
     };
 

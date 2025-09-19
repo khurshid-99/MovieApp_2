@@ -11,7 +11,7 @@ export const trendingSlice = createSlice({
     lodadeTrending: (state, actions) => {
       state.info = actions.payload;
     },
-    removieTrending: (state, actions) => {
+    removieTrending: (state) => {
       state.info = null;
     },
   },

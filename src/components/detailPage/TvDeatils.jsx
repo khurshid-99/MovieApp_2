@@ -57,7 +57,7 @@ const TvDeatils = () => {
 
             <div className="w-full h-full bg-[#f0fff000] rounded text-[white] ">
               <h1 className="font-PoppinsBoldItalic text-white text-[2.3rem] ">
-                {info.title}
+                {info.title || info.name || info.original_name}
               </h1>
               <h1 className="font-PoppinsExtraBoldItalic text-[#ff8800] text-[2rem]  ">
                 {info.tagline}
@@ -79,6 +79,14 @@ const TvDeatils = () => {
                 </b>
                 {info.overview}
               </h1>
+              <h1 className="font-PoppinsRegular ">
+                <b className="mr-2 font-PoppinsExtraBoldItalic text-[1.5rem] capitalize ">
+                  genres :
+                </b>
+                {info.genres.map((item)=>(
+                  <li key={item.name} className="ml-10 ">{item.name}</li>
+                ))}
+              </h1>
               <ul>
                 <b className="mr-2 text-[1.5rem] font-PoppinsExtraBoldItalic capitalize ">
                   translations :{" "}
@@ -99,9 +107,16 @@ const TvDeatils = () => {
               <h1 className="font-PoppinsRegular ">
                 {" "}
                 <b className="mr-2 text-[1.5rem] font-PoppinsExtraBoldItalic capitalize">
-                  first air date:
+                  first air date :
                 </b>
                 {info.first_air_date}
+              </h1>
+              <h1 className="font-PoppinsRegular ">
+                {" "}
+                <b className="mr-2 text-[1.5rem] font-PoppinsExtraBoldItalic capitalize">
+                  last air date :
+                </b>
+                {info.last_air_date}
               </h1>
               <h1 className="font-PoppinsRegular ">
                 {" "}
@@ -172,7 +187,9 @@ const TvDeatils = () => {
       </div>
 
       <div className="w-full min-h-[0vh] bg-[#06050B] relative  px-10  ">
-        {info.seasons && <SeasonsCard data={info.seasons} style={"mb-10"} title={"tv"} />}
+        {info.seasons && (
+          <SeasonsCard data={info.seasons} style={"mb-10"} title={"tv"} />
+        )}
         {info.recommendations && (
           <>
             <h1 className="text-[2.5rem] text-[white] font-PoppinsExtraBoldItalic mt-5 capitalize pl-5  ">

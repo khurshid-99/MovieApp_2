@@ -18,9 +18,10 @@ const SeasonsCard = ({
     <div className="w-full flex flex-wrap justify-center gap-5 mt-10">
       {data &&
         data.map((item, index) => (
-          <Link
-            to={`/${item.media_type || title}/${item.id}/season/${item.name
-              .replaceAll(" ", "_").toLowerCase()} `}
+          <div
+            // to={`/${item.media_type || title}/${item.id}/season/${item.name
+            //   .replaceAll(" ", "_")
+            //   .toLowerCase()} `}
             key={item.id + "-" + index}
             className={` ${h} ${w} rounded-3xl overflow-hidden relative  ${style} relative  `}
           >
@@ -30,7 +31,7 @@ const SeasonsCard = ({
                   ? `https://image.tmdb.org/t/p/original/${
                       item.backdrop_path || item.poster_path
                     }`
-                  : `public/no_img.jpg`
+                  : `/public/no_img.jpg`
               }
               alt=""
               className="w-full h-full absolute top-0 left-0 object-cover object-center z-[88] "
@@ -50,11 +51,13 @@ const SeasonsCard = ({
                 </h3>
               </div>
               <h2 className="text-2xl text-white font-semibold leading-6">
-                {item?.overview?.slice(0, 29)}
-                <small className="text-[#26c2ff] ">more...</small>
+                {item.overview && item.overview.slice(0, 29)}
+                {item.overview && (
+                  <small className="text-[#26c2ff] ">more...</small>
+                )}
               </h2>
             </div>
-          </Link>
+          </div>
         ))}
     </div>
   );

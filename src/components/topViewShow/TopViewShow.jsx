@@ -32,7 +32,7 @@ const TopViewShow = () => {
       </div>
       <div className="w-full h-fit mt-[2rem] flex items-center justify-start gap-5  overflow-x-auto mb-5  ">
         {topViewShow ? (
-          <Card data={topViewShow.slice(0, 4)}  style={"mb-5"} />
+          <Card data={topViewShow.slice(0, 4)}  style={"mb-5"} title={"tv"} />
         ) : (
           <div className="w-full h-[100vh] text-[5rem] text-[red] flex items-center justify-center  ">
             Loding...

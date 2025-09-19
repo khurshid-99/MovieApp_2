@@ -19,8 +19,15 @@ const Nav = () => {
 
   return (
     <div className="fixed top-0 w-full z-[9999] ">
-      <div className="max-w-screen-2xl mx-auto relative py-5 z-[999]  ">
-        <div className="flex justify-between items-center px-5 py-3 rounded-full border border-[#3E3D42] text-[white] relative ">
+      <div className="max-w-screen-2xl mx-auto relative py-5 z-[999]   ">
+        <div
+          className="Nav_bar  flex justify-between items-center px-5 py-3 rounded-full border border-[#3E3D42] text-[white] relative "
+          style={{
+            background: "rgba(255, 255, 255, 0.05)",
+            backdropFilter: "blur(5px)",
+            webkitBackdropFilter: "blur(5px)",
+          }}
+        >
           <input
             type="text"
             placeholder="Search Movie"
@@ -77,7 +84,6 @@ const Nav = () => {
             >
               Articles
             </NavLink>
-            <div className="absolute left-0 bg-[green] h-[1.8rem] w-[4.3rem] rounded-full"></div>
           </div>
           <div className="flex items-center gap-5 text-xl font-medium uppercase pr-2">
             <NavLink>Contack_us</NavLink>

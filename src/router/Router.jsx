@@ -17,6 +17,10 @@ const Router = createBrowserRouter([
     children: [
       {
         path: "/",
+        loader: async () => {
+          const { data } = await instance.get("trending/all/day");
+          return { trending: data.results };
+        },
         element: <Home />,
       },
       {

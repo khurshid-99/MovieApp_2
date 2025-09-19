@@ -1,5 +1,5 @@
 import { Link, useNavigate, useParams } from "react-router";
-import { Card, CastCard, DeatilsCarde } from "../index";
+import { Card, CastCard } from "../index";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import {
@@ -127,6 +127,28 @@ const MovieDeatils = () => {
                 />
               </Link>
               <br />
+              {info.imdb_id && (
+                <Link
+                  to={`https://www.imdb.com/title/${info.imdb_id}/`}
+                  target="_blank"
+                  className="text-[1.5rem] font-PoppinsBoldItalic hover:text-[blue] duration-500 "
+                >
+                  IMDB
+                  <img
+                    src="/public/send-plane-fill.png"
+                    alt=""
+                    className="h-[1.5rem] w-[1.5rem]  object-center object-cover inline-block ml-3"
+                  />
+                </Link>
+              )}
+              <b className="mr-2 text-[1.5rem] font-PoppinsExtraBoldItalic capitalize block ">
+                watch providers :{" "}
+                <img
+                  src="/public/naveItems/corner-right-down-line.png"
+                  alt=""
+                  className="h-[2rem] w-[2rem]  object-center object-cover inline-block ml-3 mt-2"
+                />
+              </b>
               {info.watch_providers === "undefined" ? (
                 <Link
                   to={
@@ -135,9 +157,6 @@ const MovieDeatils = () => {
                   target="_blank"
                   className="font-PoppinsRegular  inline-block "
                 >
-                  <b className="mr-2 text-[1.5rem] font-PoppinsExtraBoldItalic capitalize">
-                    watch providers :
-                  </b>
                   <br />
                   {info.watch_providers?.flatrate[0].provider_name}
                   <img
@@ -153,9 +172,14 @@ const MovieDeatils = () => {
               <ul>
                 <b className="mr-2 text-[1.5rem] font-PoppinsExtraBoldItalic capitalize">
                   rent :
+                  <img
+                    src="/public/naveItems/corner-right-down-line.png"
+                    alt=""
+                    className="h-[2rem] w-[2rem]  object-center object-cover inline-block ml-3 mt-2"
+                  />
                 </b>
                 {info.watch_providers?.rent.map((item) => (
-                  <>
+                  <ul className="ml-3">
                     <li
                       key={item.provider_id}
                       className="text-start mb-2 text-[1.3rem] font-PoppinsRegular "
@@ -167,7 +191,7 @@ const MovieDeatils = () => {
                         className="rounded-[10px] h-[3rem] w-[3rem] object-cover object-center hover:drop-shadow-xl hover:drop-shadow-[#f74747a8] duration-300 inline-block ml-2 "
                       />
                     </li>
-                  </>
+                  </ul>
                 ))}
               </ul>
             </div>
@@ -195,7 +219,7 @@ const MovieDeatils = () => {
                 className="inline-block ml-3 "
               />
             </h1>
-            <Card data={info.similar} />
+            <Card data={info.similar} title={"movie"} />
           </>
         )}
 
@@ -212,7 +236,7 @@ const MovieDeatils = () => {
       </div>
     </div>
   ) : (
-    <div className="w-full h-[95vh] text-[5rem] text-[red] flex items-center justify-center  ">
+    <div className="w-full h-[100vh] bg-[black] text-[5rem] text-[red] flex items-center justify-center  ">
       Loding...
     </div>
   );

@@ -11,7 +11,7 @@ export const tvSlice = createSlice({
     lodadeTv: (state, actions) => {
       state.info = actions.payload;
     },
-    removieTv: (state, actions) => {
+    removieTv: (state) => {
       state.info = null;
     },
   },

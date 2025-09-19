@@ -43,6 +43,9 @@ export const asyncLoderTv = (id) => async (dispatch) => {
     const alternative_titles = await instance.get(
       `/tv/${id}/alternative_titles`
     );
+    const screened_theatrically = await instance.get(
+      `/tv/${id}/screened_theatrically`
+    );
     const account_states = await instance.get(`/tv/${id}/account_states`);
 
     let allData = {
@@ -84,6 +87,7 @@ export const asyncLoderTv = (id) => async (dispatch) => {
       content_ratings: content_ratings.data.content_ratings,
       alternative_titles: alternative_titles.data.alternative_titles,
       account_states: account_states.data.account_states,
+      screened_theatrically: screened_theatrically.data.screened_theatrically,
     };
 
     dispatch(lodadeTv(allData));

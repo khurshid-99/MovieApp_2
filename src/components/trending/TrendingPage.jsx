@@ -197,7 +197,7 @@ const TrendingPage = () => {
             next={GetTrending}
             hasMore={hasMore}
             loader={
-              <div className="w-full h-[95vh] text-[5rem] text-[red] flex items-center justify-center  ">
+              <div className="w-full h-[100vh] bg-[black] text-[5rem] text-[red] flex items-center justify-center  ">
                 Loding...
               </div>
             }

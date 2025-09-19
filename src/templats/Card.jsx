@@ -18,7 +18,7 @@ const Card = ({ h = "h-[33vw]", w = "w-[18vw]", style, data, title }) => {
                   ? `https://image.tmdb.org/t/p/original/${
                       item.backdrop_path || item.poster_path
                     }`
-                  : `public/no_img.jpg`
+                  : `/public/no_img.jpg`
               }
               alt=""
               className="w-full h-full absolute top-0 left-0 object-cover object-center z-[88] "
